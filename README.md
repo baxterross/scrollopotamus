@@ -18,3 +18,4 @@ scrollopotamus.init().listen($('#element'), {
 - 'this.el' is a reference to the element passed as the first arguement to the 'listen' method.
 - 'listen' may be called before or after 'init', it will function identicallly
 - the 'init' and 'listen' methods should be called at or after DOMReady
+- Scrollopotamus requires JQuery, future versions may remove this dependency
