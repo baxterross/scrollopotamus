@@ -4,14 +4,20 @@ A super-lightweight Javascript scrollspy
 
 ## Implementation
 ```
-scrollopotamus.init().listen($('#element'), {
-  stick: function(e) {
-    this.el.addClass('fixed');
-  },
-  unstick: function() {
-    this.el.removeClass('fixed');
+scrollopotamus.init().listen($('#element'), [
+  {
+    name: 'tripwire',
+    point: function() {
+      return this.el.offset().top;
+    },
+    down: function() {
+      this.el.addClass('fixed');
+    },
+    up: function() {
+      this.el.removeClass('fixed);
+    }
   }
-});
+]);
 ```
 
 - In the 'stick' and 'unstick' methods, 'this' is an Scrollopotamus.Calf object which wraps the DOM element being manipulated.
